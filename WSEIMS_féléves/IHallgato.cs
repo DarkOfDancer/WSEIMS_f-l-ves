@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace WSEIMS_féléves
 {
-    public class Program
+    public interface IHallgato
     {
-        static void Main(string[] args)
-        {
-        }
     }
 }

@@ -14,11 +14,9 @@ namespace WSEIMS_féléves
 
         string Fogyasztás(int óra);
         void Lefoglalás(int óra);
-        int Teljesítmény();
-        //return HallgatoiTelljesítmény;        
+        int Teljesítmény();     
         bool VaneMégKapacitás();
-                /*if (HallgatoiTeljesitmeny==Terhelés){return false;}
-                else { return true; }*/
 
+        event EventHandler Kiiratkozott;
     }
 }

@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Hallgato.cs" />
+    <Compile Include="HallgatoKezeloModul.cs" />
     <Compile Include="IHallgato.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

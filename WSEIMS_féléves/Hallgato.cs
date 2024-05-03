@@ -11,14 +11,19 @@ namespace WSEIMS_féléves
         public string Név { get ; set ; }
         public string NeptunKód { get; set; }
         public int Terhelés { get; set; }
+        public int Kapacitás { get; set; }
         public List<Targy> Tárgyak { get; set; }
 
         Random rnd = new Random();
+
+        public event EventHandler Kiiratkozott;
+
         public Hallgato(string Név, string NeptunKód, List<Targy>Tárgyak)
         {
             this.Név = Név;
             this.NeptunKód = NeptunKód;
-            this.Terhelés = rnd.Next(0, 999);
+            this.Terhelés = 0;
+            this.Kapacitás = rnd.Next(0, 999);
         }
         public string Fogyasztás(int óra)
         {
@@ -37,7 +42,8 @@ namespace WSEIMS_féléves
 
         public bool VaneMégKapacitás()
         {
-            throw new NotImplementedException();
+            if (Kapacitás == Terhelés) { return false; }
+            else { return true; }
         }
     }
 }

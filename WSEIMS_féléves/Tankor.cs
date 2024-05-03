@@ -8,7 +8,10 @@ namespace WSEIMS_féléves
 {
     class Hallgatok :Hallgato
     {
-        
+        public Hallgatok(string Név, string NeptunKód, List<Targy> Tárgyak) : base(Név, NeptunKód, Tárgyak)
+        {
+        }
+
         public string HallgatoJelenlegi { get; set; }
         public Hallgatok KövetkezőHallgato { get; set; }
     }
@@ -18,10 +21,10 @@ namespace WSEIMS_féléves
 
         public void Felvétel(string UjHallgato)
         {
-            Hallgatok uj = new Hallgatok();
-            uj.HallgatoJelenlegi = UjHallgato;
-            uj.KövetkezőHallgato = fej;
-            fej = uj;
+           // Hallgatok uj = new Hallgatok();
+           // uj.HallgatoJelenlegi = UjHallgato;
+           // uj.KövetkezőHallgato = fej;
+           // fej = uj;
         }
     }
 }

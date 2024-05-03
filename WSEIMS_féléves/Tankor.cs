@@ -8,6 +8,7 @@ namespace WSEIMS_féléves
 {
     class Hallgatok :Hallgato
     {
+        
         public string HallgatoJelenlegi { get; set; }
         public Hallgatok KövetkezőHallgato { get; set; }
     }

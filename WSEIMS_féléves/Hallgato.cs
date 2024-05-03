@@ -21,9 +21,27 @@ namespace WSEIMS_féléves
         public Hallgato(string Név, string NeptunKód, List<Targy>Tárgyak)
         {
             this.Név = Név;
-            this.NeptunKód = NeptunKód;
+            this.NeptunKód = NeptunKódGeneralas();
             this.Terhelés = 0;
             this.Kapacitás = rnd.Next(0, 999);
+        }
+
+        public string NeptunKódGeneralas()
+        {
+            string NeptunKod = null;
+            Random rnd = new Random();
+            if (0==rnd.Next(0, 1))
+            {
+                NeptunKod += "M-";
+            }else { NeptunKod += "F-"; }
+
+            NeptunKod += rnd.Next(100, 999);
+            for (int i = 0; i <= 1;)
+            {
+                NeptunKod+= (char)rnd.Next('a', 'z' + 1);
+            }
+            Console.WriteLine(NeptunKod);
+            return NeptunKod;
         }
         public string Fogyasztás(int óra)
         {

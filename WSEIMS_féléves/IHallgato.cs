@@ -10,7 +10,7 @@ namespace WSEIMS_féléves
     {
         string Név { get; set; }
         string NeptunKód {  get; set; }
-        Tárgy[] Tárgyak { get; set; }
+        Targy[] Tárgyak { get; set; }
 
         string Fogyasztás(int óra) 
         {

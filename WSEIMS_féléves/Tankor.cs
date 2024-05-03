@@ -6,18 +6,21 @@ using System.Threading.Tasks;
 
 namespace WSEIMS_féléves
 {
-    public class Tankor
+    class Hallgatok :Hallgato
     {
-        public List<IHallgato> Hallgatok { get; set; }
+        public string HallgatoJelenlegi { get; set; }
+        public Hallgatok KövetkezőHallgato { get; set; }
+    }
+    class Tankor
+    {
+        private Hallgatok fej;
 
-        public Tankor()
+        public void Felvétel(string UjHallgato)
         {
-            Hallgatok = new List<IHallgato>();
-        }
-
-        public void HallgatoHozzaadasa(Hallgato hallgato)
-        {
-            Hallgatok.Add(hallgato);
+            Hallgatok uj = new Hallgatok();
+            uj.HallgatoJelenlegi = UjHallgato;
+            uj.KövetkezőHallgato = fej;
+            fej = uj;
         }
     }
 }

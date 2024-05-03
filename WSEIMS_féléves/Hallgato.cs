@@ -10,8 +10,34 @@ namespace WSEIMS_féléves
     {
         public string Név { get ; set ; }
         public string NeptunKód { get; set; }
-        public Targy[] Tárgyak { get; set; }
+        public int Terhelés { get; set; }
+        public List<Targy> Tárgyak { get; set; }
 
-        public event EventHandler Kiiratkozott;
+        Random rnd = new Random();
+        public Hallgato(string Név, string NeptunKód, List<Targy>Tárgyak)
+        {
+            this.Név = Név;
+            this.NeptunKód = NeptunKód;
+            this.Terhelés = rnd.Next(0, 999);
+        }
+        public string Fogyasztás(int óra)
+        {
+            return Név + "nevű hallgató " + óra + " óra alatt " + (óra * 25) + " dl kávét fogyasztott és " + (óra * 2) + " alkalommal esett pánikba.";
+        }
+
+        public void Lefoglalás(int óra)
+        {
+            Terhelés += óra;
+        }
+
+        public int Teljesítmény()
+        {
+            return this.Terhelés;
+        }
+
+        public bool VaneMégKapacitás()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

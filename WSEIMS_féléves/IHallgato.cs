@@ -6,37 +6,19 @@ using System.Threading.Tasks;
 
 namespace WSEIMS_féléves
 {
-    public interface IHallgato
+    interface IHallgato
     {
         string Név { get; set; }
         string NeptunKód {  get; set; }
-        Targy[] Tárgyak { get; set; }
+        List<Targy> Tárgyak { get; set; }
 
-        string Fogyasztás(int óra) 
-        {
-            return Név + "nevű hallgató " + óra + " óra alatt " + (óra * 25) + " dl kávét fogyasztott és " + (óra * 2) + " alkalommal esett pánikba.";
-        }
-        string Lefoglalás(int óra) 
-        {
-            Terhelés += óra;
-        }
-        int Teljesítmény() 
-        {
-            return HallgatoiTelljesítmény;        
-        }
-        bool VaneMégKapacitás() 
-        {
-
-                if (HallgatoiTeljesitmeny==Terhelés){return false;}
-                else { return true; }
-        }
-
-        public event EventHandler Kiiratkozott;
-
-        protected virtual void OnKiiratkozott(EventArgs e)
-        {
-            Kiiratkozott?.Invoke(this, e);
-        }
+        string Fogyasztás(int óra);
+        void Lefoglalás(int óra);
+        int Teljesítmény();
+        //return HallgatoiTelljesítmény;        
+        bool VaneMégKapacitás();
+                /*if (HallgatoiTeljesitmeny==Terhelés){return false;}
+                else { return true; }*/
 
     }
 }
